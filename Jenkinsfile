@@ -5,10 +5,13 @@ pipeline {
     }
     
   }
+  tools {
+    maven 'Maven_3.3.3'
+    jdk 'JDK_8u111'
+  }
   stages {
     stage('build') {
       steps {
-        tool(name: 'Maven_3.0.5', type: 'maven')
         sh 'mvn clean'
         sh 'mvn compile'
       }
